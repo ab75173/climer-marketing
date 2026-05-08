@@ -1,4 +1,6 @@
-:root {
+/* ── Color scheme: Forest + Lime (default) ─────────────────────── */
+:root,
+[data-scheme="forest-lime"] {
   --ink: #0A0F0D;
   --forest: #0D1F17;
   --canopy: #142A1E;
@@ -10,6 +12,97 @@
   --fog: #8BA898;
   --border: rgba(232, 244, 238, 0.10);
   --ghost: rgba(232, 244, 238, 0.06);
+  --on-cta: var(--ink);          /* text color on the primary CTA */
+  --hero-em: var(--lime);        /* hero "MOUNTAIN" emphasis word */
+  --noise-opacity: 0.4;
+}
+
+/* ── Color scheme: Indigo + Warm White ─────────────────────────── */
+[data-scheme="indigo"] {
+  --ink: #FAF7F0;       /* page bg flips to warm white */
+  --forest: #EFEEFA;    /* secondary surface → very light indigo */
+  --canopy: #FFFFFF;    /* card surface → white */
+  --moss: #E5E5F5;
+  --lime: #4F4FAF;      /* "lime" tokens become indigo (text/wordmark) */
+  --amber: #F5A623;     /* amber unchanged — used for CTAs + hero accent */
+  --coral: #C73838;     /* darker coral for AA contrast on light bg */
+  --ice: #1A1B5E;       /* primary text */
+  --fog: #6B70A8;       /* muted text */
+  --border: rgba(26, 27, 94, 0.12);
+  --ghost: rgba(75, 75, 200, 0.06);
+  --on-cta: var(--ink); /* still dark text on the bright CTA */
+  --hero-em: var(--amber); /* MOUNTAIN word reads amber in indigo scheme */
+  --noise-opacity: 0.08;
+}
+
+/* Indigo-scheme button polish — CTAs become amber, ghost button picks up indigo */
+[data-scheme="indigo"] .btn-lime { background: var(--amber); color: var(--on-cta); }
+[data-scheme="indigo"] .btn-lime:hover { background: #FFB940; }
+[data-scheme="indigo"] .btn-ghost { background: var(--ghost); color: var(--ice); border-color: var(--border); }
+[data-scheme="indigo"] .btn-ghost:hover { border-color: var(--lime); color: var(--lime); }
+
+/* The hero "MOUNTAIN" word — uses --hero-em so it can be lime in
+   forest-lime scheme and amber in indigo scheme. */
+.hero h1 em { color: var(--hero-em); }
+.section-title em { color: var(--hero-em); }
+.final-cta h2 em { color: var(--hero-em); }
+
+/* Routes-section gradient is hardcoded — invert in indigo */
+[data-scheme="indigo"] .routes-section {
+  background: linear-gradient(180deg, var(--ink) 0%, var(--forest) 100%);
+}
+
+/* Featured route card on indigo: amber bg instead of lime */
+[data-scheme="indigo"] .route-card.featured { background: var(--amber); border-color: var(--amber); }
+
+/* Decorative hero glow: lime → amber blob */
+[data-scheme="indigo"] .hero::before {
+  background: radial-gradient(circle, rgba(245, 166, 35, 0.14) 0%, transparent 70%);
+}
+
+/* Nav backdrop — was always dark rgba; flip for light scheme */
+[data-scheme="indigo"] nav { background: rgba(250, 247, 240, 0.85); }
+
+/* Final CTA decorative mountain emoji — too dark on white in indigo */
+[data-scheme="indigo"] .final-cta::before { opacity: 0.06; }
+
+/* Stats strip uses --forest as bg — already overridden above */
+
+/* Scheme picker (in footer) */
+.scheme-toggle {
+  display: inline-flex;
+  gap: 4px;
+  padding: 3px;
+  background: var(--ghost);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  align-items: center;
+}
+.scheme-toggle button {
+  background: transparent;
+  border: none;
+  color: var(--fog);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.scheme-toggle button:hover { color: var(--ice); }
+.scheme-toggle button[aria-pressed="true"] {
+  background: var(--lime);
+  color: var(--on-cta);
+}
+.scheme-toggle-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--fog);
+  margin-right: 8px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html { scroll-behavior: smooth; }

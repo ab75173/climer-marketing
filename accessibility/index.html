@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0A0F0D" />
+  <meta name="color-scheme" content="dark" />
+
+  <title>Accessibility — Climer</title>
+  <meta name="description" content="Climer's accessibility statement: how the marketing site and app conform to WCAG 2.1 AA, what we test, and how to report a barrier." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://climer.ai/accessibility" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Climer" />
+  <meta property="og:url" content="https://climer.ai/accessibility" />
+  <meta property="og:title" content="Accessibility — Climer" />
+  <meta property="og:description" content="Our accessibility statement and how to report a barrier." />
+  <meta property="og:image" content="https://climer.ai/og-image.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/icon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script>(function(){try{var s=localStorage.getItem("climer-scheme");if(s!=="indigo")s="forest-lime";document.documentElement.setAttribute("data-scheme",s);}catch(e){}})();</script>
+  <script src="/scheme-toggle.js" defer></script>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="wordmark">CLIMER</a>
+      <div class="nav-links">
+        <a href="/#routes">Routes</a>
+        <a href="/news">News</a>
+        <a href="https://app.climer.ai" class="btn btn-lime">Open the app →</a>
+      </div>
+    </div>
+  </nav>
+
+  <article id="main" class="article">
+    <div class="article-meta">Accessibility · Updated May 8, 2026</div>
+    <h1>Accessibility at Climer</h1>
+
+    <p>Climer is committed to making AI literacy reachable for everyone. That commitment includes the people who use assistive technology to navigate the web. This page describes our current conformance, the standards we hold ourselves to, and how to flag a barrier you hit.</p>
+
+    <h2>Standard we target</h2>
+
+    <p>The Climer marketing site (climer.ai) and app (app.climer.ai) target conformance with <strong>Web Content Accessibility Guidelines (WCAG) 2.1, level AA</strong>. We follow the four WCAG principles: <em>Perceivable, Operable, Understandable, Robust.</em></p>
+
+    <h2>What's in place today</h2>
+
+    <ul>
+      <li><strong>Keyboard navigation:</strong> every interactive element on the marketing site is keyboard-reachable. A "Skip to main content" link appears at the top of every page when you press Tab.</li>
+      <li><strong>Visible focus indicators:</strong> a 3px lime outline shows where the keyboard focus is on every page.</li>
+      <li><strong>Color contrast:</strong> body text and UI text meet WCAG AA contrast (4.5:1 for normal text, 3:1 for large text). Both color schemes (Forest + Lime, Indigo + Warm White) were audited together.</li>
+      <li><strong>Reduced motion:</strong> we respect <code>prefers-reduced-motion</code>. If your OS is set to reduce motion, we suppress non-essential animation.</li>
+      <li><strong>Semantic HTML:</strong> headings nest correctly, lists are real <code>&lt;ul&gt;</code>/<code>&lt;ol&gt;</code> elements, links describe their destination.</li>
+      <li><strong>Mobile-first design:</strong> the site works at 320px width and up; pinch-zoom is never disabled.</li>
+    </ul>
+
+    <h2>Known gaps we're working on</h2>
+
+    <ul>
+      <li><strong>Form labels in the app:</strong> some form fields in the app rely on placeholder-only labels. We're migrating those to proper <code>&lt;label&gt;</code> elements.</li>
+      <li><strong>Quiz screen reader experience:</strong> our in-app quizzes don't yet announce correct/incorrect feedback in a way that screen readers reliably catch. Work in progress.</li>
+      <li><strong>Captions on video content:</strong> we don't currently host video. When we do, captions and transcripts will be a launch requirement.</li>
+    </ul>
+
+    <h2>How to report a barrier</h2>
+
+    <p>If you hit something that doesn't work for you — anywhere on Climer — please tell us. We treat accessibility reports as bug reports: investigated, prioritized, fixed.</p>
+
+    <p>Email: <a href="mailto:climer.ai@gmail.com">climer.ai@gmail.com</a> — please include the page URL, the assistive technology you use (if applicable), and what didn't work.</p>
+
+    <p>We aim to respond within 5 business days.</p>
+
+    <h2>Audits</h2>
+
+    <p>The site is audited against WCAG 2.1 AA at least quarterly using axe DevTools and manual keyboard-only and screen-reader passes. The most recent audit was May 2026.</p>
+
+    <p class="article-meta" style="margin-top: 40px; font-size: 11px; color: var(--fog);">
+      Standards reference: <a href="https://www.w3.org/TR/WCAG21/" rel="noopener">WCAG 2.1</a> · <a href="https://designsystem.digital.gov/" rel="noopener">U.S. Web Design System</a>
+    </p>
+  </article>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2026 Climer · AI literacy for everyone</div>
+      <div class="footer-links">
+        <a href="https://app.climer.ai">App</a>
+        <a href="/news">News</a>
+        <a href="/contact">Contact</a>
+        <a href="/accessibility">Accessibility</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -185,7 +185,7 @@ body::after {
   opacity: 0.4;
 }
 
-.display { font-family: 'Fraunces', ui-serif, Georgia, serif; letter-spacing: 1px; line-height: 0.95; }
+.display { font-family: 'Fraunces', ui-serif, Georgia, serif; letter-spacing: -1px; line-height: 0.95; }
 
 /* Fraunces 700 baseline for all headings/wordmarks. */
 .display, .wordmark, .hero h1, .section-title, .stat-val,
@@ -279,7 +279,7 @@ nav {
   font-family: 'Fraunces', ui-serif, Georgia, serif;
   font-size: clamp(56px, 11vw, 128px);
   line-height: 0.9;
-  letter-spacing: 2px;
+  letter-spacing: -1px;
   margin-bottom: 24px;
 }
 .hero h1 em { font-style: normal; color: var(--lime); }
@@ -311,7 +311,7 @@ nav {
   font-size: 56px;
   color: var(--lime);
   line-height: 1;
-  letter-spacing: 1px;
+  letter-spacing: -1px;
   margin-bottom: 8px;
 }
 .stat-lbl {
@@ -336,7 +336,7 @@ section { padding: 80px 0; position: relative; }
   font-family: 'Fraunces', ui-serif, Georgia, serif;
   font-size: clamp(40px, 6vw, 64px);
   line-height: 0.95;
-  letter-spacing: 1px;
+  letter-spacing: -1px;
   margin-bottom: 24px;
 }
 .section-title em { font-style: normal; color: var(--lime); }
@@ -365,7 +365,7 @@ section { padding: 80px 0; position: relative; }
 .card-title {
   font-family: 'Fraunces', ui-serif, Georgia, serif;
   font-size: 28px;
-  letter-spacing: 1px;
+  letter-spacing: -1px;
   margin-bottom: 8px;
 }
 .card-meta {
@@ -449,7 +449,7 @@ section { padding: 80px 0; position: relative; }
 .final-cta h2 {
   font-family: 'Fraunces', ui-serif, Georgia, serif;
   font-size: clamp(40px, 6vw, 72px);
-  letter-spacing: 1px;
+  letter-spacing: -1px;
   line-height: 0.95;
   margin-bottom: 16px;
   position: relative;
@@ -592,7 +592,7 @@ section { padding: 80px 0; position: relative; }
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 700;
   line-height: 1.05;
-  letter-spacing: 0.5px;
+  letter-spacing: -1px;
   color: var(--ice);
   margin-bottom: 16px;
 }
@@ -616,6 +616,7 @@ section { padding: 80px 0; position: relative; }
   font-size: 30px;
   font-weight: 700;
   line-height: 1.15;
+  letter-spacing: -1px;
   color: var(--ice);
   margin: 48px 0 16px;
 }
@@ -623,6 +624,7 @@ section { padding: 80px 0; position: relative; }
   font-family: 'Fraunces', ui-serif, Georgia, serif;
   font-size: 22px;
   font-weight: 700;
+  letter-spacing: -1px;
   color: var(--ice);
   margin: 32px 0 12px;
 }

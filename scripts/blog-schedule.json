@@ -1,0 +1,16 @@
+{
+  "_comment": "Map of blog post slug → release date (YYYY-MM-DD). Posts before their release date are noindex'd, missing from sitemap.xml, and hidden from /news. The release-blog-posts.js script (run daily via GitHub Actions) updates state when a date arrives. Edit dates here to reschedule.",
+  "what-is-ai-literacy": "2026-05-01",
+  "chatgpt-vs-claude-vs-gemini": "2026-05-02",
+  "use-ai-for-homework-without-cheating": "2026-05-03",
+  "how-to-write-a-chatgpt-prompt": "2026-05-08",
+  "ai-tools-for-teachers": "2026-05-08",
+  "how-to-teach-kids-ai": "2026-05-11",
+  "is-chatgpt-safe-for-kids": "2026-05-14",
+  "chatgpt-for-school": "2026-05-18",
+  "best-free-ai-tools-for-students-2026": "2026-05-21",
+  "ai-cover-letter": "2026-05-26",
+  "spot-chatgpt-hallucinations": "2026-05-28",
+  "will-ai-take-my-job": "2026-06-01",
+  "ai-wage-premium": "2026-06-04"
+}

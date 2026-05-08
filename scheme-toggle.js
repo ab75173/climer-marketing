@@ -22,7 +22,7 @@
       var v = localStorage.getItem(KEY)
       if (SCHEMES.indexOf(v) !== -1) return v
     } catch (e) { /* localStorage may be blocked */ }
-    return 'forest-lime'
+    return 'indigo'
   }
 
   function apply(scheme) {

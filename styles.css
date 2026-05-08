@@ -611,7 +611,9 @@ section { padding: 80px 0; position: relative; }
   color: var(--ice);
   margin-bottom: 18px;
 }
-.article p { color: rgba(232, 244, 238, 0.92); }
+/* color-mix lets us soften the body text 8% without hardcoding a color
+   value that breaks on the indigo (warm-white) scheme. */
+.article p { color: color-mix(in srgb, var(--ice) 92%, transparent); }
 .article h2 {
   font-family: 'Fraunces', ui-serif, Georgia, serif;
   font-size: 30px;

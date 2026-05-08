@@ -187,10 +187,10 @@ body::after {
 
 .display { font-family: 'Fraunces', ui-serif, Georgia, serif; letter-spacing: 1px; line-height: 0.95; }
 
-/* Fraunces 600 baseline for all headings/wordmarks. */
+/* Fraunces 700 baseline for all headings/wordmarks. */
 .display, .wordmark, .hero h1, .section-title, .stat-val,
 .card-title, .final-cta h2, .faq-summary {
-  font-weight: 600;
+  font-weight: 700;
 }
 .lime { color: var(--lime); }
 .fog  { color: var(--fog); }
@@ -590,7 +590,7 @@ section { padding: 80px 0; position: relative; }
 .article h1 {
   font-family: 'Fraunces', ui-serif, Georgia, serif;
   font-size: clamp(36px, 5vw, 56px);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.05;
   letter-spacing: 0.5px;
   color: var(--ice);
@@ -614,7 +614,7 @@ section { padding: 80px 0; position: relative; }
 .article h2 {
   font-family: 'Fraunces', ui-serif, Georgia, serif;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.15;
   color: var(--ice);
   margin: 48px 0 16px;
@@ -622,7 +622,7 @@ section { padding: 80px 0; position: relative; }
 .article h3 {
   font-family: 'Fraunces', ui-serif, Georgia, serif;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ice);
   margin: 32px 0 12px;
 }

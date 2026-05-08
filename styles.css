@@ -219,7 +219,8 @@ nav {
 .wordmark {
   font-family: 'Fraunces', ui-serif, Georgia, serif;
   font-size: 28px;
-  letter-spacing: 3px;
+  font-weight: 700;
+  letter-spacing: -1px;
   color: var(--lime);
   line-height: 1;
 }
@@ -277,8 +278,8 @@ nav {
 }
 .hero h1 {
   font-family: 'Fraunces', ui-serif, Georgia, serif;
-  font-size: clamp(56px, 11vw, 128px);
-  line-height: 0.9;
+  font-size: clamp(56px, 11vw, 100px);
+  line-height: 0.95;
   letter-spacing: -1px;
   margin-bottom: 24px;
 }

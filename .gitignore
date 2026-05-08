@@ -2,3 +2,7 @@
 node_modules/
 .vercel
 *.log
+
+# SEO tooling — never commit credentials
+scripts/.gsc-service-account.json
+scripts/seo_opportunities.json

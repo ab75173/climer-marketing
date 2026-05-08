@@ -1,0 +1,13 @@
+{
+  "name": "climer-marketing",
+  "version": "1.0.0",
+  "description": "Static marketing site at climer.ai. Plus SEO tooling — pulls Search Console data and outputs article ideas.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seo-ideas": "node scripts/seo-ideas.js"
+  },
+  "devDependencies": {
+    "googleapis": "^144.0.0"
+  }
+}

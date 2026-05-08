@@ -15,7 +15,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9B%B0%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..900,30&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -55,7 +55,16 @@
       opacity: 0.4;
     }
 
-    .display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 1px; line-height: 0.95; }
+    .display { font-family: 'Fraunces', ui-serif, Georgia, serif; letter-spacing: 1px; line-height: 0.95; }
+
+    /* Fraunces 600 baseline + SOFT axis for the playful display feel.
+       All headings/wordmarks below use 'Fraunces' family — this rule
+       sets weight + variation settings consistently. */
+    .display, .wordmark, .hero h1, .section-title, .stat-val,
+    .card-title, .final-cta h2 {
+      font-weight: 600;
+      font-variation-settings: 'SOFT' 30;
+    }
     .lime { color: var(--lime); }
     .fog  { color: var(--fog); }
     .amber { color: var(--amber); }
@@ -81,7 +90,7 @@
       margin: 0 auto;
     }
     .wordmark {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Fraunces', ui-serif, Georgia, serif;
       font-size: 28px;
       letter-spacing: 3px;
       color: var(--lime);
@@ -140,7 +149,7 @@
       background: var(--canopy);
     }
     .hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Fraunces', ui-serif, Georgia, serif;
       font-size: clamp(56px, 11vw, 128px);
       line-height: 0.9;
       letter-spacing: 2px;
@@ -171,7 +180,7 @@
       text-align: center;
     }
     .stat-val {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Fraunces', ui-serif, Georgia, serif;
       font-size: 56px;
       color: var(--lime);
       line-height: 1;
@@ -197,7 +206,7 @@
       margin-bottom: 16px;
     }
     .section-title {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Fraunces', ui-serif, Georgia, serif;
       font-size: clamp(40px, 6vw, 64px);
       line-height: 0.95;
       letter-spacing: 1px;
@@ -227,7 +236,7 @@
     .card:hover { border-color: rgba(200,245,60,0.3); }
     .card-icon { font-size: 36px; margin-bottom: 16px; line-height: 1; }
     .card-title {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Fraunces', ui-serif, Georgia, serif;
       font-size: 28px;
       letter-spacing: 1px;
       margin-bottom: 8px;
@@ -311,7 +320,7 @@
       pointer-events: none;
     }
     .final-cta h2 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Fraunces', ui-serif, Georgia, serif;
       font-size: clamp(40px, 6vw, 72px);
       letter-spacing: 1px;
       line-height: 0.95;

@@ -1,0 +1,22 @@
+{
+  "name": "Climer — AI Literacy",
+  "short_name": "Climer",
+  "description": "Bite-sized AI literacy climbs. Real economic outcomes. Mobile-first.",
+  "start_url": "https://app.climer.ai/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A0F0D",
+  "theme_color": "#C8F53C",
+  "categories": ["education", "productivity"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

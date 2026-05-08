@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1F17"/>
+      <stop offset="100%" stop-color="#0A0F0D"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#C8F53C" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#C8F53C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- mountain mark -->
+  <g transform="translate(80, 110)">
+    <rect width="96" height="96" rx="20" fill="#0D1F17" stroke="#1E3D2C" stroke-width="2"/>
+    <path d="M 16 76 L 39 38 L 51 54 L 70 24 L 84 76 Z" fill="#C8F53C"/>
+    <circle cx="70" cy="24" r="5" fill="#F5A623"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="200" y="180" font-family="'Fraunces', ui-serif, Georgia, serif" font-size="64" font-weight="600" fill="#C8F53C" letter-spacing="6">CLIMER</text>
+
+  <!-- headline -->
+  <text x="80" y="320" font-family="'Fraunces', ui-serif, Georgia, serif" font-size="84" font-weight="600" fill="#E8F4EE">The AI economy</text>
+  <text x="80" y="410" font-family="'Fraunces', ui-serif, Georgia, serif" font-size="84" font-weight="600" fill="#E8F4EE">is a <tspan fill="#C8F53C">mountain.</tspan></text>
+
+  <!-- subhead -->
+  <text x="80" y="490" font-family="'Outfit', system-ui, sans-serif" font-size="28" fill="#8BA898">Bite-sized AI literacy climbs.</text>
+  <text x="80" y="528" font-family="'Outfit', system-ui, sans-serif" font-size="28" fill="#8BA898">One climb at a time.</text>
+
+  <!-- url -->
+  <text x="80" y="588" font-family="'Outfit', system-ui, sans-serif" font-size="22" font-weight="600" fill="#C8F53C" letter-spacing="2">CLIMER.AI</text>
+</svg>

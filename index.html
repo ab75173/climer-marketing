@@ -3,19 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Climer is a mobile-first AI literacy app. Bite-sized climbs. Real economic outcomes. Bridge the AI skills gap before it closes." />
-  <meta property="og:title" content="Climer — AI literacy. One climb at a time." />
-  <meta property="og:description" content="Bite-sized lessons that turn AI from intimidating to useful. The wage premium is real; the window is open." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://climer.ai" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0A0F0D" />
+  <meta name="color-scheme" content="dark" />
 
   <title>Climer — AI literacy. One climb at a time.</title>
+  <meta name="description" content="Climer is a mobile-first AI literacy app. Bite-sized climbs teach you how to use AI well — for school, work, and the wage premium. Bridge the AI skills gap before it closes." />
+  <meta name="keywords" content="AI literacy, AI skills, learn AI, ChatGPT, Claude, Gemini, AI for students, AI for professionals, AI economy, prompt engineering, mobile AI app" />
+  <meta name="author" content="Climer" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9B%B0%3C/text%3E%3C/svg%3E" />
+  <link rel="canonical" href="https://climer.ai/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Climer" />
+  <meta property="og:url" content="https://climer.ai/" />
+  <meta property="og:title" content="Climer — AI literacy. One climb at a time." />
+  <meta property="og:description" content="Bite-sized lessons that turn AI from intimidating to useful. The wage premium is real; the window is open." />
+  <meta property="og:image" content="https://climer.ai/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Climer — AI literacy. One climb at a time." />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Climer — AI literacy. One climb at a time." />
+  <meta name="twitter:description" content="Bite-sized AI literacy climbs. The wage premium is real; the window is open." />
+  <meta name="twitter:image" content="https://climer.ai/og-image.svg" />
+
+  <!-- Icons + PWA -->
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/icon.svg" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Structured data: Organization + WebSite + WebApplication.
+       Voice assistants and rich-result cards pull from this. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://climer.ai/#org",
+        "name": "Climer",
+        "url": "https://climer.ai/",
+        "logo": "https://climer.ai/icon.svg",
+        "description": "Mobile-first AI literacy. Bite-sized climbs that turn AI from intimidating to useful."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://climer.ai/#website",
+        "url": "https://climer.ai/",
+        "name": "Climer",
+        "description": "AI literacy. One climb at a time.",
+        "publisher": { "@id": "https://climer.ai/#org" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://app.climer.ai/#app",
+        "name": "Climer",
+        "url": "https://app.climer.ai/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "Bite-sized AI literacy climbs with progress tracking, badges, and curated AI economic news.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "publisher": { "@id": "https://climer.ai/#org" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://climer.ai/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Climer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Climer is a mobile-first AI literacy app. Each lesson is a 5–15 minute climb that teaches you how to use AI tools like ChatGPT, Claude, and Gemini in real situations — for school, work, or career growth."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who is Climer for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Three routes: Base Camp for middle school students, Mid-Mountain for high school students, and Summit Route for working professionals. The same fundamentals at the level that fits you."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is AI literacy important right now?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Workers using AI well are collecting a 15–30% wage premium. AI adoption is converging across the US 10× faster than any prior tech wave. The window to get ahead is two to five years — early movers lock in advantage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Climer take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each climb is 5–15 minutes. A full unit is roughly 4–14 weeks depending on your route. Designed to fit into a daily commute or coffee break."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Climer free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Climer is free during early access at app.climer.ai. Sign in once and your progress follows you across phone and desktop."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I learn AI in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start by using a real tool — ChatGPT, Claude, or Gemini — every day on real tasks. Then learn the fundamentals: how AI predicts text, where it hallucinates, and how to write prompts that get useful answers. Climer teaches both, in 5–15 minute climbs at app.climer.ai."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <style>
     :root {
@@ -365,6 +487,7 @@
         <a href="#routes">Routes</a>
         <a href="#why">Why now</a>
         <a href="#who">Who it's for</a>
+        <a href="#faq">FAQ</a>
         <a href="https://app.climer.ai" class="btn btn-lime">Open the app →</a>
       </div>
     </div>
@@ -525,6 +648,45 @@
           <div class="card-title">Parents & teachers</div>
           <div class="card-body">Give the kids in your life the AI literacy that schools mostly aren't teaching. Bite-sized, structured, age-appropriate by route.</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="narrow">
+      <div class="section-eyebrow">Frequently asked</div>
+      <h2 class="section-title">Questions, <em>answered.</em></h2>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 32px;">
+        <details style="background: var(--canopy); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px;">
+          <summary style="font-family: 'Fraunces', ui-serif, Georgia, serif; font-weight: 600; font-size: 20px; color: var(--ice); cursor: pointer; list-style: none;">What is Climer?</summary>
+          <p style="margin-top: 12px; color: var(--fog); font-size: 16px;">Climer is a mobile-first AI literacy app. Each lesson is a 5–15 minute climb that teaches you how to use AI tools like ChatGPT, Claude, and Gemini in real situations — for school, work, or career growth.</p>
+        </details>
+
+        <details style="background: var(--canopy); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px;">
+          <summary style="font-family: 'Fraunces', ui-serif, Georgia, serif; font-weight: 600; font-size: 20px; color: var(--ice); cursor: pointer; list-style: none;">Who is Climer for?</summary>
+          <p style="margin-top: 12px; color: var(--fog); font-size: 16px;">Three routes: Base Camp for middle school students, Mid-Mountain for high school students, and Summit Route for working professionals. The same fundamentals at the level that fits you.</p>
+        </details>
+
+        <details style="background: var(--canopy); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px;">
+          <summary style="font-family: 'Fraunces', ui-serif, Georgia, serif; font-weight: 600; font-size: 20px; color: var(--ice); cursor: pointer; list-style: none;">Why is AI literacy important right now?</summary>
+          <p style="margin-top: 12px; color: var(--fog); font-size: 16px;">Workers using AI well are collecting a 15–30% wage premium. AI adoption is converging across the US 10× faster than any prior tech wave. The window to get ahead is two to five years — early movers lock in the advantage, the way the early internet adopters did in the 90s.</p>
+        </details>
+
+        <details style="background: var(--canopy); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px;">
+          <summary style="font-family: 'Fraunces', ui-serif, Georgia, serif; font-weight: 600; font-size: 20px; color: var(--ice); cursor: pointer; list-style: none;">How long does Climer take?</summary>
+          <p style="margin-top: 12px; color: var(--fog); font-size: 16px;">Each climb is 5–15 minutes. A full unit is roughly 4–14 weeks depending on your route. Designed to fit into a daily commute or coffee break — not a 4-hour video course.</p>
+        </details>
+
+        <details style="background: var(--canopy); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px;">
+          <summary style="font-family: 'Fraunces', ui-serif, Georgia, serif; font-weight: 600; font-size: 20px; color: var(--ice); cursor: pointer; list-style: none;">Is Climer free?</summary>
+          <p style="margin-top: 12px; color: var(--fog); font-size: 16px;">Yes. Climer is free during early access at <a href="https://app.climer.ai" style="color: var(--lime); text-decoration: underline;">app.climer.ai</a>. Sign in once and your progress follows you across phone and desktop.</p>
+        </details>
+
+        <details style="background: var(--canopy); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px;">
+          <summary style="font-family: 'Fraunces', ui-serif, Georgia, serif; font-weight: 600; font-size: 20px; color: var(--ice); cursor: pointer; list-style: none;">How do I learn AI in 2026?</summary>
+          <p style="margin-top: 12px; color: var(--fog); font-size: 16px;">Start by using a real tool — ChatGPT, Claude, or Gemini — every day on real tasks. Then learn the fundamentals: how AI predicts text, where it hallucinates, and how to write prompts that get useful answers. Climer teaches both, in 5–15 minute climbs at <a href="https://app.climer.ai" style="color: var(--lime); text-decoration: underline;">app.climer.ai</a>.</p>
+        </details>
       </div>
     </div>
   </section>

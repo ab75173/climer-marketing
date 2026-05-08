@@ -106,6 +106,63 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html { scroll-behavior: smooth; }
+
+/* ── Accessibility (WCAG 2.1 AA) ─────────────────────────────────
+   - Visible focus indicators on every interactive element
+   - Skip-to-content link for keyboard users
+   - prefers-reduced-motion respected
+   - sr-only utility for screen-reader-only labels */
+
+:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+button:focus-visible, a:focus-visible, summary:focus-visible, [role="button"]:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -200px;
+  left: 0;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 0 0 12px 0;
+  z-index: 1000;
+  transition: top 0.15s;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--ice);
+  outline-offset: -3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
   font-family: 'Outfit', system-ui, sans-serif;
   background: var(--ink);

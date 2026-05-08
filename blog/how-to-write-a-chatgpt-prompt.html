@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0A0F0D" />
+  <meta name="color-scheme" content="dark" />
+
+  <title>How to write a ChatGPT prompt that doesn't waste your time — Climer</title>
+  <meta name="description" content="The 3-part formula that separates good prompts from bad ones, with before/after examples. Plus the iteration moves that 10x your output quality." />
+  <meta name="keywords" content="how to write a chatgpt prompt, chatgpt prompt examples, prompt engineering basics, chatgpt prompt formula, write better prompts" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="author" content="Climer HQ" />
+  <link rel="canonical" href="https://climer.ai/blog/how-to-write-a-chatgpt-prompt" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Climer" />
+  <meta property="og:url" content="https://climer.ai/blog/how-to-write-a-chatgpt-prompt" />
+  <meta property="og:title" content="How to write a ChatGPT prompt that doesn't waste your time" />
+  <meta property="og:description" content="The 3-part formula plus the iteration moves that 10x your output quality." />
+  <meta property="og:image" content="https://climer.ai/og-image.svg" />
+  <meta property="article:published_time" content="2026-05-08" />
+  <meta property="article:author" content="Climer HQ" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BlogPosting","@id":"https://climer.ai/blog/how-to-write-a-chatgpt-prompt#post","headline":"How to write a ChatGPT prompt that doesn't waste your time","description":"The 3-part formula plus the iteration moves that 10x your output quality.","url":"https://climer.ai/blog/how-to-write-a-chatgpt-prompt","datePublished":"2026-05-08","dateModified":"2026-05-08","author":{"@type":"Organization","name":"Climer HQ"},"publisher":{"@id":"https://climer.ai/#org"},"image":"https://climer.ai/og-image.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://climer.ai/blog/how-to-write-a-chatgpt-prompt"},"isPartOf":{"@id":"https://climer.ai/blog#blog"},"wordCount":1700,"inLanguage":"en-US"},
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://climer.ai/"},{"@type":"ListItem","position":2,"name":"News","item":"https://climer.ai/news"},{"@type":"ListItem","position":3,"name":"How to write a ChatGPT prompt"}]}
+  ]}
+  </script>
+
+  <script>(function(){try{var s=localStorage.getItem("climer-scheme");if(s!=="indigo")s="forest-lime";document.documentElement.setAttribute("data-scheme",s);}catch(e){}})();</script>
+  <script src="/scheme-toggle.js" defer></script>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="wordmark">CLIMER</a>
+      <div class="nav-links">
+        <a href="/#routes">Routes</a>
+        <a href="/news">News</a>
+        <a href="https://app.climer.ai" class="btn btn-lime">Open the app →</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <div class="article-meta">Skills · 8 min read</div>
+    <h1>How to write a ChatGPT prompt that doesn't waste your time</h1>
+    <div class="article-byline">By <strong>Climer HQ</strong> · Published May 8, 2026 · <a href="/news">All posts</a></div>
+
+    <p>A great ChatGPT prompt has three parts: <strong>instruction + context + format</strong>. Skip any one and the output gets generic fast. That's the whole formula. Most people miss two of the three and then conclude AI is "just OK." It isn't — your prompts are.</p>
+
+    <p>This is a practical guide. Examples, not theory. By the end you'll know exactly why your prompts have been underperforming and what to do about it.</p>
+
+    <h2>The 3-part formula</h2>
+
+    <p><strong>Instruction</strong> — what you want done. Be specific. "Write an email" is too vague. "Write a 3-paragraph follow-up email" tells ChatGPT what shape the answer should take.</p>
+
+    <p><strong>Context</strong> — who you are, who it's for, what came before. ChatGPT knows nothing about your situation by default. Spell it out. "I'm a sales rep emailing a CFO who didn't reply to my proposal last week" gives ChatGPT something to work with.</p>
+
+    <p><strong>Format</strong> — how you want it back. Bullet list, table, single paragraph, Slack message, JSON. Tell it. Otherwise you get whatever it feels like, which is usually a wall of prose.</p>
+
+    <h2>Before / after</h2>
+
+    <p>Watch what happens when you add the missing pieces.</p>
+
+    <p><strong>❌ Bad:</strong> "Write me an email about scheduling a meeting."</p>
+
+    <p>You'll get a generic, formal-sounding email with too many adjectives and a "I hope this email finds you well" opener.</p>
+
+    <p><strong>✅ Better:</strong> "Write a 60-word follow-up email to a CFO I met at a conference last month who said she'd 'circle back next quarter.' I want to nudge for a 15-minute call this week. Tone: warm but direct. No 'hope this finds you well.' End with a yes/no question."</p>
+
+    <p>You'll get something you can actually paste and send.</p>
+
+    <p>The difference is 60 seconds of typing context. The output difference is 10x.</p>
+
+    <h2>The role frame: the cheapest 1-line upgrade</h2>
+
+    <p>Adding <strong>"You are a [role]"</strong> at the start of a prompt anchors ChatGPT in a specific voice and depth. It's the single biggest cheap upgrade most people aren't using.</p>
+
+    <ul>
+      <li>"Help me with my pitch deck" → generic startup advice.</li>
+      <li>"You are a Series A pitch coach who's seen 500 decks. Critique mine." → actual pointed feedback.</li>
+    </ul>
+
+    <ul>
+      <li>"Explain compound interest" → textbook definition.</li>
+      <li>"You are a finance teacher for 8th graders. Explain compound interest using a sneaker example." → a kid-comprehensible analogy you can actually use.</li>
+    </ul>
+
+    <h2>Common mistakes to stop making</h2>
+
+    <h3>Too vague</h3>
+
+    <p>"Climate change." "Help with my essay." "Make this better." These aren't prompts; they're topics. ChatGPT writes a Wikipedia stub and you walk away thinking AI is overrated.</p>
+
+    <h3>Too long</h3>
+
+    <p>Walls of text without paragraph breaks. ChatGPT misses your actual ask. Keep prompts scannable. If your prompt is over 200 words, split it: set context first, then ask the question.</p>
+
+    <h3>Contradictory</h3>
+
+    <p>"Make it formal but casual." "Brief but thorough." "Professional but funny." Pick one or specify the tradeoff.</p>
+
+    <h3>No context</h3>
+
+    <p>You know your situation. ChatGPT doesn't. Describe it. Two sentences are usually enough.</p>
+
+    <h3>Asking for opinions like facts</h3>
+
+    <p>"What is the best CRM?" forces ChatGPT into a confident-sounding guess. Better: "What are the tradeoffs between Salesforce, HubSpot, and Pipedrive for a 5-person B2B startup?" Now you get something you can actually act on.</p>
+
+    <div class="article-cta">
+      <p><strong>Want to actually master this?</strong> Climer's Unit 2 is ChatGPT Essentials — 10 climbs covering setup, prompting fundamentals, advanced patterns, and the workflow that separates power users from casual ones. Free during early access.</p>
+      <a href="https://app.climer.ai" class="btn btn-lime btn-lg">Open the app →</a>
+    </div>
+
+    <h2>Iterate — don't restart</h2>
+
+    <p>First output is rarely the final output. The skill isn't writing the perfect first prompt; it's the follow-up. Common iteration moves:</p>
+
+    <ul>
+      <li><strong>"Cut to half the length."</strong> Tightens prose dramatically.</li>
+      <li><strong>"More specific examples in section 2."</strong> Fills in vague spots.</li>
+      <li><strong>"Less corporate. Sound like a human."</strong> Fixes tone.</li>
+      <li><strong>"Where am I being weak here?"</strong> Switches into critique mode on your own work.</li>
+      <li><strong>"Try a totally different angle."</strong> Restart within the same context, no need to start a new chat.</li>
+      <li><strong>"What did you assume that I didn't tell you? Surface those assumptions."</strong> Catches misinterpretations.</li>
+    </ul>
+
+    <p>Three rounds of "tighter" + "more specific" + "different angle" almost always beats one perfect prompt. <strong>You're directing, not authoring.</strong></p>
+
+    <h2>The chain-of-thought prompt</h2>
+
+    <p>For anything that requires reasoning — analysis, decisions, multi-step math, complex code — add <strong>"Let's think step by step"</strong> or <strong>"Reason carefully before answering."</strong></p>
+
+    <p>It costs nothing. It dramatically improves quality on hard questions. ChatGPT will show its work, which means you can spot where it went sideways and correct course. Without it, you get a confident answer with no audit trail.</p>
+
+    <h2>Few-shot examples (when you want a specific style)</h2>
+
+    <p>If you want output in your voice, give it 2–3 examples of your past output. "Here are three subject lines I've written that I like: [paste 3]. Now write 5 more in the same voice for [topic]."</p>
+
+    <p>Wildly more reliable than describing your style in words. Show, don't tell — works for AI exactly like it does for human collaborators.</p>
+
+    <h2>The pattern that compounds</h2>
+
+    <p>Once you find a prompt that works for a recurring task, save it. Reuse it. Tweak it. Build a personal library. The 5–10 prompts you use weekly will be worth more than every "ultimate prompt list" on the internet, because they're tuned to your context.</p>
+
+    <p>If you use ChatGPT daily, set up <strong>Custom Instructions</strong> (in Settings → Personalization). One-time setup: tell it your role, your tone preferences, your formatting defaults. Every chat going forward inherits that. Massive ongoing time saver.</p>
+
+    <h2>The 60-second test</h2>
+
+    <p>Before you send any prompt, ask yourself: <em>does it have all three? Instruction, context, format?</em> If no, add the missing piece. The 30 seconds spent will save you 5 minutes of regenerating bad output.</p>
+
+    <p>Climer's <a href="https://app.climer.ai">Unit 2</a> walks through this with hands-on examples — the formula, the iteration loop, the role frame, advanced patterns like chain-of-thought and few-shot. 10 climbs, 5–15 minutes each, free during early access.</p>
+
+    <p class="article-meta" style="margin-top: 40px; font-size: 11px; color: var(--fog);">
+      Related: <a href="/blog/chatgpt-vs-claude-vs-gemini">ChatGPT vs Claude vs Gemini</a> covers when to use each tool — the prompts above work for all three.
+    </p>
+  </article>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2026 Climer · AI literacy for everyone</div>
+      <div class="footer-links">
+        <a href="https://app.climer.ai">App</a>
+        <a href="/news">News</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

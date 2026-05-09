@@ -14,6 +14,7 @@
   --canopy: #1F0F3D;
   --moss: #2A1F4A;
   --lime: #C4B5FD;               /* brand accent → electric lavender */
+  --lime-hover: #B19CFC;         /* hover variant — slightly brighter */
   --amber: #F5A623;
   --coral: #FF5C5C;
   --ice: #F3F0FF;
@@ -35,6 +36,7 @@
     --canopy: #FFFFFF;
     --moss: #EDE9FE;
     --lime: #6D28D9;             /* deeper purple for AA on lavender */
+    --lime-hover: #5B21B6;       /* deeper purple on hover */
     --amber: #B36500;
     --coral: #C73838;
     --ice: #1A0F2E;
@@ -56,6 +58,7 @@
   --canopy: #142A1E;
   --moss: #1E3D2C;
   --lime: #C8F53C;
+  --lime-hover: #d4ff44;
   --amber: #F5A623;
   --coral: #FF5C5C;
   --ice: #E8F4EE;
@@ -74,6 +77,7 @@
   --canopy: #FFFFFF;    /* card surface → white */
   --moss: #E5E5F5;
   --lime: #4F4FAF;      /* "lime" tokens become indigo (text/wordmark) */
+  --lime-hover: #FFB940; /* hover on the amber CTA — brighter amber */
   --amber: #F5A623;     /* amber unchanged — used for CTAs + hero accent */
   --coral: #C73838;     /* darker coral for AA contrast on light bg */
   --ice: #1A1B5E;       /* primary text */
@@ -85,9 +89,10 @@
   --noise-opacity: 0.08;
 }
 
-/* Indigo-scheme button polish — CTAs become amber, ghost button picks up indigo */
+/* Indigo-scheme button polish — CTAs become amber, ghost button picks up indigo.
+   The .btn-lime:hover background is now driven by the --lime-hover token, so
+   no scheme-specific override is needed here. */
 [data-scheme="indigo"] .btn-lime { background: var(--amber); color: var(--on-cta); }
-[data-scheme="indigo"] .btn-lime:hover { background: #FFB940; }
 [data-scheme="indigo"] .btn-ghost { background: var(--ghost); color: var(--ice); border-color: var(--border); }
 [data-scheme="indigo"] .btn-ghost:hover { border-color: var(--lime); color: var(--lime); }
 
@@ -301,7 +306,7 @@ nav {
   cursor: pointer;
 }
 .btn-lime { background: var(--lime); color: var(--ink); }
-.btn-lime:hover { background: #d4ff44; transform: translateY(-1px); }
+.btn-lime:hover { background: var(--lime-hover); transform: translateY(-1px); }
 .btn-ghost { background: var(--ghost); color: var(--ice); border-color: var(--border); }
 .btn-ghost:hover { border-color: var(--lime); color: var(--lime); }
 .btn-lg { padding: 18px 30px; font-size: 16px; border-radius: 14px; }
@@ -589,7 +594,7 @@ section { padding: 80px 0; position: relative; }
   align-items: center;
   gap: 4px;
 }
-.news-card-link:hover { color: #d4ff44; }
+.news-card-link:hover { color: var(--lime-hover); }
 
 /* Blog */
 .blog-list {
@@ -691,7 +696,7 @@ section { padding: 80px 0; position: relative; }
 .article ul, .article ol { padding-left: 24px; margin-bottom: 18px; }
 .article li { margin-bottom: 8px; }
 .article a { color: var(--lime); text-decoration: underline; }
-.article a:hover { color: #d4ff44; }
+.article a:hover { color: var(--lime-hover); }
 .article strong { color: var(--ice); font-weight: 700; }
 .article blockquote {
   border-left: 3px solid var(--lime);

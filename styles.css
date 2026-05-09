@@ -407,7 +407,7 @@ section { padding: 80px 0; position: relative; }
 }
 .section-title {
   font-family: 'Fraunces', ui-serif, Georgia, serif;
-  font-size: clamp(40px, 6vw, 64px);
+  font-size: clamp(40px, 6vw, 54px);
   line-height: 0.95;
   letter-spacing: -1px;
   margin-bottom: 24px;

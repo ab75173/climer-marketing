@@ -6,15 +6,18 @@
  * (button group injected into the footer of each page).
  *
  * Schemes:
+ *   lavender    — Brand default. Tracks OS color preference (dark by
+ *                 default, lavender-light when the OS prefers light).
+ *                 Homepage hero stays dark in light mode.
  *   forest-lime — Climer original. Deep forest surfaces, lime accent.
  *   indigo      — Indigo + Warm White. Indigo wordmark, amber accent.
  *
- * App side (app.climer.ai) ships the same two schemes with a richer
+ * App side (app.climer.ai) ships the same three schemes with a richer
  * UI (theme axis added). This file is the marketing-site equivalent.
  */
 (function () {
-  var SCHEMES = ['forest-lime', 'indigo']
-  var LABELS  = { 'forest-lime': 'Forest', 'indigo': 'Indigo' }
+  var SCHEMES = ['lavender', 'forest-lime', 'indigo']
+  var LABELS  = { 'lavender': 'Lavender', 'forest-lime': 'Forest', 'indigo': 'Indigo' }
   var KEY = 'climer-scheme'
 
   function read() {
@@ -22,7 +25,7 @@
       var v = localStorage.getItem(KEY)
       if (SCHEMES.indexOf(v) !== -1) return v
     } catch (e) { /* localStorage may be blocked */ }
-    return 'indigo'
+    return 'lavender'
   }
 
   function apply(scheme) {

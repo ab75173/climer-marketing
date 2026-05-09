@@ -926,6 +926,132 @@ footer {
   .educators-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 
+/* ── Generic checklist (✓-bulleted list, lavender-tinted) ─────── */
+.checklist { list-style: none; padding: 0; margin: 0; }
+.checklist li {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--fog);
+  line-height: 1.55;
+}
+.checklist li::before {
+  content: '✓';
+  color: var(--lime);
+  font-weight: 800;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+.checklist li strong { color: var(--ice); font-weight: 700; }
+.checklist.dont li::before { content: '✗'; color: var(--coral); }
+
+/* ── Audience cards: 6-up grid for the homepage routing UI ────── */
+.audience-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.audience-card {
+  background: var(--canopy);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  transition: border-color .15s, transform .15s;
+}
+.audience-card:hover { border-color: var(--lime); transform: translateY(-2px); }
+.audience-card-emoji { font-size: 28px; line-height: 1; flex-shrink: 0; }
+.audience-card-label { font-size: 15px; font-weight: 700; color: var(--ice); }
+.audience-card-arrow {
+  margin-left: auto;
+  color: var(--fog);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* ── Trust row on landing pages ──────────────────────────────── */
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--fog);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 28px 0;
+}
+.trust-row span { display: inline-flex; align-items: center; gap: 8px; }
+.trust-row span::before { content: '✓'; color: var(--lime); font-weight: 800; font-size: 14px; }
+
+/* ── Lightweight contact form (used on /for-educators, /partner) ── */
+.contact-form { display: flex; flex-direction: column; gap: 14px; max-width: 560px; }
+.contact-form label { font-size: 13px; font-weight: 700; color: var(--ice); }
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: var(--ghost);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--ice);
+  font-family: inherit;
+  font-size: 15px;
+  resize: vertical;
+}
+.contact-form input:focus,
+.contact-form textarea:focus { outline: 2px solid var(--lime); outline-offset: 1px; border-color: var(--lime); }
+.contact-form textarea { min-height: 100px; }
+
+/* ── Salary calculator table — static for v1 ─────────────────── */
+.calc-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: var(--canopy);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.calc-table td, .calc-table th {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+}
+.calc-table tr:last-child td { border-bottom: 0; }
+.calc-table th { color: var(--fog); font-size: 12px; text-transform: uppercase; letter-spacing: 1.2px; font-weight: 700; }
+.calc-table td:last-child { color: var(--lime); font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
+
+/* ── Inline timeline (job-seeker credential timeline) ─────────── */
+.timeline { display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; }
+.timeline li {
+  position: relative;
+  padding: 18px 0 18px 32px;
+  border-left: 2px solid var(--border);
+  margin-left: 8px;
+  font-size: 15px;
+  color: var(--fog);
+  line-height: 1.55;
+}
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 22px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--lime);
+}
+.timeline li strong { color: var(--ice); display: block; font-size: 16px; margin-bottom: 4px; }
+.timeline li:last-child { border-left-color: transparent; }
+
 @media (max-width: 600px) {
   .nav-links a:not(.btn) { display: none; }
   .hero { padding: 56px 0 40px; }

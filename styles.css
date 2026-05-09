@@ -287,7 +287,14 @@ nav {
   line-height: 1;
 }
 .nav-links { display: flex; align-items: center; gap: 24px; }
-.nav-links a { font-size: 14px; font-weight: 600; color: var(--fog); transition: color .15s; }
+.nav-links a {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--fog);
+  transition: color .15s;
+}
 .nav-links a:hover { color: var(--lime); }
 
 /* Buttons */

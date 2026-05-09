@@ -340,7 +340,7 @@ nav {
 }
 .hero h1 {
   font-family: 'Fraunces', ui-serif, Georgia, serif;
-  font-size: clamp(56px, 11vw, 100px);
+  font-size: clamp(56px, 8vw, 68px);
   line-height: 0.95;
   letter-spacing: -1px;
   margin-bottom: 24px;

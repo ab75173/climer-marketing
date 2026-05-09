@@ -148,40 +148,67 @@
     <div class="wrap">
       <div class="section-eyebrow">Choose your route</div>
       <h2 class="section-title">Pick the door that fits <em>you.</em></h2>
-      <p class="section-lead">Six paths up the mountain. Each one starts free.</p>
+      <p class="section-lead">Four paths. Each one starts free.</p>
 
-      <div class="audience-cards">
-        <a href="/for-students" class="audience-card">
-          <span class="audience-card-emoji" aria-hidden>🎒</span>
-          <span class="audience-card-label">I'm a student</span>
-          <span class="audience-card-arrow" aria-hidden>→</span>
+      <div class="audience-tall-cards">
+        <!-- Phase B (TODO): swap each card's gradient bg for an Unsplash <img>
+             behind the .audience-tall-overlay. Suggested searches:
+               student     → studying / laptop / library
+               professional → office / desk / focused work
+               parent      → parent + child reading / family
+               teacher     → classroom / educator with students -->
+        <a href="/for-students" class="audience-tall-card" data-tint="student">
+          <span class="audience-tall-emoji" aria-hidden>🎒</span>
+          <div class="audience-tall-body">
+            <span class="audience-tall-meta">For students</span>
+            <span class="audience-tall-label">I'm a student</span>
+            <div class="audience-tall-voice">
+              <span class="audience-tall-voice-eyebrow">What students tend to ask</span>
+              <p>"Will this actually be useful, or is it just another thing I won't finish?"</p>
+            </div>
+            <span class="audience-tall-arrow" aria-hidden>→</span>
+          </div>
         </a>
-        <a href="/for-professionals" class="audience-card">
-          <span class="audience-card-emoji" aria-hidden>💼</span>
-          <span class="audience-card-label">I'm a professional</span>
-          <span class="audience-card-arrow" aria-hidden>→</span>
+        <a href="/for-professionals" class="audience-tall-card" data-tint="pro">
+          <span class="audience-tall-emoji" aria-hidden>💼</span>
+          <div class="audience-tall-body">
+            <span class="audience-tall-meta">For professionals</span>
+            <span class="audience-tall-label">I'm a professional</span>
+            <div class="audience-tall-voice">
+              <span class="audience-tall-voice-eyebrow">What we hear from working adults</span>
+              <p>"I keep meaning to get serious about AI but I don't know where to start."</p>
+            </div>
+            <span class="audience-tall-arrow" aria-hidden>→</span>
+          </div>
         </a>
-        <a href="/for-parents" class="audience-card">
-          <span class="audience-card-emoji" aria-hidden>👨‍👩‍👧</span>
-          <span class="audience-card-label">I'm a parent</span>
-          <span class="audience-card-arrow" aria-hidden>→</span>
+        <a href="/for-parents" class="audience-tall-card" data-tint="parent">
+          <span class="audience-tall-emoji" aria-hidden>👨‍👩‍👧</span>
+          <div class="audience-tall-body">
+            <span class="audience-tall-meta">For parents</span>
+            <span class="audience-tall-label">I'm a parent</span>
+            <div class="audience-tall-voice">
+              <span class="audience-tall-voice-eyebrow">What parents are saying</span>
+              <p>"I want my kid to understand AI before they just trust it."</p>
+            </div>
+            <span class="audience-tall-arrow" aria-hidden>→</span>
+          </div>
         </a>
-        <a href="/for-educators" class="audience-card">
-          <span class="audience-card-emoji" aria-hidden>🍎</span>
-          <span class="audience-card-label">I'm a teacher</span>
-          <span class="audience-card-arrow" aria-hidden>→</span>
-        </a>
-        <a href="/career" class="audience-card">
-          <span class="audience-card-emoji" aria-hidden>🎯</span>
-          <span class="audience-card-label">I'm looking for a job</span>
-          <span class="audience-card-arrow" aria-hidden>→</span>
-        </a>
-        <a href="/for-schools" class="audience-card">
-          <span class="audience-card-emoji" aria-hidden>🏫</span>
-          <span class="audience-card-label">I run a school</span>
-          <span class="audience-card-arrow" aria-hidden>→</span>
+        <a href="/for-educators" class="audience-tall-card" data-tint="teacher">
+          <span class="audience-tall-emoji" aria-hidden>🍎</span>
+          <div class="audience-tall-body">
+            <span class="audience-tall-meta">For educators</span>
+            <span class="audience-tall-label">I'm a teacher</span>
+            <div class="audience-tall-voice">
+              <span class="audience-tall-voice-eyebrow">What educators tell us</span>
+              <p>"Most AI curricula feel like ads for the platforms. I want one that's actually for students."</p>
+            </div>
+            <span class="audience-tall-arrow" aria-hidden>→</span>
+          </div>
         </a>
       </div>
+      <p style="margin-top: 24px; font-size: 13px; color: var(--fog); text-align: center;">
+        Other paths: <a href="/career" class="lime">looking for a job</a> · <a href="/for-schools" class="lime">school admin</a> · <a href="/partner" class="lime">funder or partner</a>
+      </p>
     </div>
   </section>
 

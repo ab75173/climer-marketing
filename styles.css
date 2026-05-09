@@ -705,8 +705,11 @@ section { padding: 80px 0; position: relative; }
 }
 .article ul, .article ol { padding-left: 24px; margin-bottom: 18px; }
 .article li { margin-bottom: 8px; }
-.article a { color: var(--lime); text-decoration: underline; }
-.article a:hover { color: var(--lime-hover); }
+/* Inline article links — scoped to non-button anchors so the .btn-lime
+   CTA keeps its dark ink on the lavender background instead of being
+   recolored to var(--lime) and disappearing into its own background. */
+.article a:not(.btn) { color: var(--lime); text-decoration: underline; }
+.article a:not(.btn):hover { color: var(--lime-hover); }
 .article strong { color: var(--ice); font-weight: 700; }
 .article blockquote {
   border-left: 3px solid var(--lime);
@@ -990,12 +993,22 @@ footer {
 .audience-tall-cards {
   display: flex;
   gap: 14px;
+  /* Row height is locked here — not on the cards. Cards stretch to fill
+     this height. The combo of aspect-ratio + min-height:0 + overflow:
+     hidden makes the row's height a hard cap that no card content can
+     ever push past. 12/5 ≈ four 3:5 cards side-by-side after gaps. */
+  aspect-ratio: 12 / 5;
+  min-height: 0;
+  overflow: hidden;
 }
 .audience-tall-card {
-  flex: 1;
+  flex: 1 1 0;
   min-width: 0;
+  /* Override flex item's default min-height: auto, which would let a
+     card's content (e.g. revealed voice text) force the row taller. */
+  min-height: 0;
+  height: 100%;
   position: relative;
-  aspect-ratio: 3 / 5;
   background: linear-gradient(170deg, var(--canopy) 0%, var(--ink) 100%);  /* fallback if img fails */
   border: 1px solid var(--border);
   border-radius: 22px;
@@ -1005,9 +1018,7 @@ footer {
   justify-content: flex-end;
   text-decoration: none;
   overflow: hidden;
-  transition: flex 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
-              border-color 0.25s ease,
-              transform 0.25s ease;
+  transition: border-color 0.25s ease;
 }
 /* Background photo — fills the card, sits below the gradient overlay
    and the body text. */
@@ -1035,19 +1046,24 @@ footer {
   background: linear-gradient(180deg, rgba(15, 10, 30, 0.2) 0%, rgba(15, 10, 30, 0.65) 40%, rgba(15, 10, 30, 0.97) 100%);
 }
 
-/* Hover-expand: hovered card grows, siblings shrink */
-.audience-tall-cards:hover .audience-tall-card:not(:hover) { flex: 0.85; }
+/* Hover: in-place feedback — image zooms, border tints. No size change
+   on the card itself, so siblings stay put and the row doesn't reflow. */
 .audience-tall-cards .audience-tall-card:hover {
-  flex: 1.4;
   border-color: var(--lime);
-  transform: translateY(-4px);
 }
 
 .audience-tall-body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  position: relative;
+  /* Absolute so growing the voice reveal can't push the card past its
+     aspect-ratio and grow the row's height. Offsets match card padding
+     (28px vertical / 24px horizontal). Reset to relative below 520px
+     where the card uses aspect-ratio: auto and sizes to content. */
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 28px;
   z-index: 2;
 }
 .audience-tall-meta {
@@ -1107,19 +1123,33 @@ footer {
 }
 .audience-tall-card:hover .audience-tall-arrow { transform: translateX(6px); }
 
-/* Below ~900px: drop the hover-expand and stack 2-up, then 1-up */
+/* Below ~900px: stack 2-up, then 1-up */
 @media (max-width: 900px) {
-  .audience-tall-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .audience-tall-card { aspect-ratio: 4 / 5; }
-  .audience-tall-cards:hover .audience-tall-card:not(:hover),
-  .audience-tall-cards .audience-tall-card:hover { flex: unset; }
-  .audience-tall-cards .audience-tall-card:hover { transform: none; }
+  .audience-tall-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    /* Desktop locks (aspect-ratio + overflow + min-height) are off here
+       so the grid can size naturally to its cards. */
+    aspect-ratio: auto;
+    overflow: visible;
+    min-height: 0;
+  }
+  .audience-tall-card { aspect-ratio: 4 / 5; height: auto; min-height: 0; }
   /* On touch / smaller screens, show the sub copy by default */
   .audience-tall-voice { max-height: 240px; opacity: 1; }
 }
 @media (max-width: 520px) {
   .audience-tall-cards { grid-template-columns: 1fr; }
   .audience-tall-card { aspect-ratio: auto; min-height: 200px; padding: 24px; }
+  /* Card no longer has a fixed aspect-ratio here, so let the body
+     contribute to the card's height again. */
+  .audience-tall-body {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
 }
 
 /* ── Trust row on landing pages ──────────────────────────────── */

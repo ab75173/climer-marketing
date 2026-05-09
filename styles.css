@@ -973,6 +973,138 @@ footer {
   flex-shrink: 0;
 }
 
+/* ── Audience tall cards: 4-up vertical cards with hover-expand ──
+ * Inspired by Vanta's "Proof? We've got proof." gallery — flex
+ * layout with all cards equal width by default, hovered card grows
+ * while siblings shrink. Pure CSS, no JS. */
+.audience-tall-cards {
+  display: flex;
+  gap: 14px;
+}
+.audience-tall-card {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  aspect-ratio: 3 / 5;
+  background: linear-gradient(170deg, var(--canopy) 0%, var(--ink) 100%);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  overflow: hidden;
+  transition: flex 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.25s ease,
+              transform 0.25s ease;
+}
+.audience-tall-card::after {
+  content: '';
+  position: absolute;
+  inset: -40% -20% auto auto;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 181, 253, 0.16) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.audience-tall-card:hover::after { opacity: 1; }
+
+/* Hover-expand: hovered card grows, siblings shrink */
+.audience-tall-cards:hover .audience-tall-card:not(:hover) { flex: 0.85; }
+.audience-tall-cards .audience-tall-card:hover {
+  flex: 1.4;
+  border-color: var(--lime);
+  transform: translateY(-4px);
+}
+
+.audience-tall-emoji {
+  font-size: 56px;
+  line-height: 1;
+  display: block;
+}
+.audience-tall-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+.audience-tall-meta {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--fog);
+}
+.audience-tall-label {
+  font-family: 'Fraunces', ui-serif, Georgia, serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  color: var(--ice);
+}
+/* Composite-voice quote — reveals on hover. Eyebrow makes the framing
+   honest: this is "what audiences tend to say," not an attributed
+   testimonial from a real (or fake) person. */
+.audience-tall-voice {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  /* Hidden on collapsed cards, revealed when this one is hovered */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity 0.3s ease 0.05s;
+}
+.audience-tall-voice-eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--lime);
+}
+.audience-tall-voice p {
+  font-family: 'Fraunces', ui-serif, Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ice);
+  margin: 0;
+}
+.audience-tall-card:hover .audience-tall-voice {
+  max-height: 240px;
+  opacity: 1;
+}
+.audience-tall-arrow {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 22px;
+  color: var(--lime);
+  transition: transform 0.25s ease;
+}
+.audience-tall-card:hover .audience-tall-arrow { transform: translateX(6px); }
+
+/* Below ~900px: drop the hover-expand and stack 2-up, then 1-up */
+@media (max-width: 900px) {
+  .audience-tall-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .audience-tall-card { aspect-ratio: 4 / 5; }
+  .audience-tall-cards:hover .audience-tall-card:not(:hover),
+  .audience-tall-cards .audience-tall-card:hover { flex: unset; }
+  .audience-tall-cards .audience-tall-card:hover { transform: none; }
+  /* On touch / smaller screens, show the sub copy by default */
+  .audience-tall-voice { max-height: 240px; opacity: 1; }
+}
+@media (max-width: 520px) {
+  .audience-tall-cards { grid-template-columns: 1fr; }
+  .audience-tall-card { aspect-ratio: auto; min-height: 200px; padding: 24px; }
+}
+
 /* ── Trust row on landing pages ──────────────────────────────── */
 .trust-row {
   display: flex;

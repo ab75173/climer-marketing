@@ -152,14 +152,17 @@
       <p class="section-lead">Four paths. Each one starts free.</p>
 
       <div class="audience-tall-cards">
-        <!-- Phase B (TODO): swap each card's gradient bg for an Unsplash <img>
-             behind the .audience-tall-overlay. Suggested searches:
-               student     → studying / laptop / library
+        <!-- Audience card images: free Unsplash hotlinks. If any photo
+             feels off-audience, swap the URL — the rest of the layout
+             does not depend on these specific IDs.
+               student      → studying / laptop / library
                professional → office / desk / focused work
-               parent      → parent + child reading / family
-               teacher     → classroom / educator with students -->
+               parent       → parent + child reading / family
+               teacher      → classroom / educator with students
+             A linear-gradient overlay (.audience-tall-card::before)
+             keeps the bottom text readable regardless of photo content. -->
         <a href="/for-students" class="audience-tall-card" data-tint="student">
-          <span class="audience-tall-emoji" aria-hidden>🎒</span>
+          <img class="audience-tall-img" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&auto=format&fit=crop&q=80" alt="" loading="lazy" />
           <div class="audience-tall-body">
             <span class="audience-tall-meta">For students</span>
             <span class="audience-tall-label">I'm a student</span>
@@ -171,7 +174,7 @@
           </div>
         </a>
         <a href="/for-professionals" class="audience-tall-card" data-tint="pro">
-          <span class="audience-tall-emoji" aria-hidden>💼</span>
+          <img class="audience-tall-img" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&auto=format&fit=crop&q=80" alt="" loading="lazy" />
           <div class="audience-tall-body">
             <span class="audience-tall-meta">For professionals</span>
             <span class="audience-tall-label">I'm a professional</span>
@@ -183,7 +186,7 @@
           </div>
         </a>
         <a href="/for-parents" class="audience-tall-card" data-tint="parent">
-          <span class="audience-tall-emoji" aria-hidden>👨‍👩‍👧</span>
+          <img class="audience-tall-img" src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?w=900&auto=format&fit=crop&q=80" alt="" loading="lazy" />
           <div class="audience-tall-body">
             <span class="audience-tall-meta">For parents</span>
             <span class="audience-tall-label">I'm a parent</span>
@@ -195,7 +198,7 @@
           </div>
         </a>
         <a href="/for-educators" class="audience-tall-card" data-tint="teacher">
-          <span class="audience-tall-emoji" aria-hidden>🍎</span>
+          <img class="audience-tall-img" src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=900&auto=format&fit=crop&q=80" alt="" loading="lazy" />
           <div class="audience-tall-body">
             <span class="audience-tall-meta">For educators</span>
             <span class="audience-tall-label">I'm a teacher</span>

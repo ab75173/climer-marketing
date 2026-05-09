@@ -996,32 +996,44 @@ footer {
   min-width: 0;
   position: relative;
   aspect-ratio: 3 / 5;
-  background: linear-gradient(170deg, var(--canopy) 0%, var(--ink) 100%);
+  background: linear-gradient(170deg, var(--canopy) 0%, var(--ink) 100%);  /* fallback if img fails */
   border: 1px solid var(--border);
   border-radius: 22px;
   padding: 28px 24px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   text-decoration: none;
   overflow: hidden;
   transition: flex 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
               border-color 0.25s ease,
               transform 0.25s ease;
 }
-.audience-tall-card::after {
+/* Background photo — fills the card, sits below the gradient overlay
+   and the body text. */
+.audience-tall-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.audience-tall-card:hover .audience-tall-img { transform: scale(1.05); }
+/* Dark-bottom gradient so the body text stays readable on any photo */
+.audience-tall-card::before {
   content: '';
   position: absolute;
-  inset: -40% -20% auto auto;
-  width: 70%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(196, 181, 253, 0.16) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.35s ease;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 10, 30, 0.15) 0%, rgba(15, 10, 30, 0.55) 45%, rgba(15, 10, 30, 0.95) 100%);
+  z-index: 1;
+  transition: background 0.35s ease;
   pointer-events: none;
 }
-.audience-tall-card:hover::after { opacity: 1; }
+.audience-tall-card:hover::before {
+  background: linear-gradient(180deg, rgba(15, 10, 30, 0.2) 0%, rgba(15, 10, 30, 0.65) 40%, rgba(15, 10, 30, 0.97) 100%);
+}
 
 /* Hover-expand: hovered card grows, siblings shrink */
 .audience-tall-cards:hover .audience-tall-card:not(:hover) { flex: 0.85; }
@@ -1031,17 +1043,12 @@ footer {
   transform: translateY(-4px);
 }
 
-.audience-tall-emoji {
-  font-size: 56px;
-  line-height: 1;
-  display: block;
-}
 .audience-tall-body {
   display: flex;
   flex-direction: column;
   gap: 10px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 .audience-tall-meta {
   font-size: 11px;

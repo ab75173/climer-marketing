@@ -292,10 +292,13 @@ nav {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--fog);
   transition: color .15s;
 }
-.nav-links a:hover { color: var(--lime); }
+/* Color scoped to non-button anchors so .btn-lime's dark ink wins
+   on the CTA — the previous unscoped rule overrode the button text
+   to --fog, which on the lavender button bg failed contrast. */
+.nav-links a:not(.btn) { color: var(--fog); }
+.nav-links a:not(.btn):hover { color: var(--lime); }
 
 /* Buttons */
 .btn {

@@ -1,5 +1,55 @@
-/* ── Color scheme: Forest + Lime (default) ─────────────────────── */
+/* ── Color scheme: Lavender (default) ──────────────────────────────
+ * Brand-default scheme. Tracks OS color preference: dark by default,
+ * lavender-light when prefers-color-scheme is light. The homepage hero
+ * keeps a dark background even in light mode (see "Lavender hero stays
+ * dark" block below) — bold opener that anchors the brand.
+ *
+ * The pre-paint script in each page's <head> sets data-scheme="lavender"
+ * for first-time visitors. Repeat visitors who explicitly picked
+ * forest-lime or indigo via the footer toggle keep their choice. */
 :root,
+[data-scheme="lavender"] {
+  --ink: #0F0A1E;
+  --forest: #1A1035;
+  --canopy: #1F0F3D;
+  --moss: #2A1F4A;
+  --lime: #C4B5FD;               /* brand accent → electric lavender */
+  --amber: #F5A623;
+  --coral: #FF5C5C;
+  --ice: #F3F0FF;
+  --fog: #9C85C8;
+  --border: rgba(196, 181, 253, 0.12);
+  --ghost: rgba(196, 181, 253, 0.06);
+  --on-cta: var(--ink);
+  --hero-em: var(--lime);
+  --noise-opacity: 0.35;
+}
+
+/* Light variant of lavender — tracks OS preference. Scoped to lavender
+   (and unset = :root) so forest-lime/indigo are unaffected. */
+@media (prefers-color-scheme: light) {
+  :root,
+  [data-scheme="lavender"] {
+    --ink: #FAF8FF;              /* lavender canvas */
+    --forest: #F3EFFF;
+    --canopy: #FFFFFF;
+    --moss: #EDE9FE;
+    --lime: #6D28D9;             /* deeper purple for AA on lavender */
+    --amber: #B36500;
+    --coral: #C73838;
+    --ice: #1A0F2E;
+    --fog: #5A4F7E;
+    --border: rgba(124, 58, 237, 0.15);
+    --ghost: rgba(124, 58, 237, 0.06);
+    --on-cta: #FFFFFF;           /* white text on the deep-purple CTA */
+    --hero-em: #C4B5FD;
+    --noise-opacity: 0.05;
+  }
+}
+
+/* ── Color scheme: Forest + Lime (legacy) ─────────────────────────
+ * No longer the brand default — kept as an explicit toggle option
+ * for users who prefer the original Climer aesthetic. */
 [data-scheme="forest-lime"] {
   --ink: #0A0F0D;
   --forest: #0D1F17;
@@ -12,8 +62,8 @@
   --fog: #8BA898;
   --border: rgba(232, 244, 238, 0.10);
   --ghost: rgba(232, 244, 238, 0.06);
-  --on-cta: var(--ink);          /* text color on the primary CTA */
-  --hero-em: var(--lime);        /* hero "MOUNTAIN" emphasis word */
+  --on-cta: var(--ink);
+  --hero-em: var(--lime);
   --noise-opacity: 0.4;
 }
 
@@ -40,6 +90,13 @@
 [data-scheme="indigo"] .btn-lime:hover { background: #FFB940; }
 [data-scheme="indigo"] .btn-ghost { background: var(--ghost); color: var(--ice); border-color: var(--border); }
 [data-scheme="indigo"] .btn-ghost:hover { border-color: var(--lime); color: var(--lime); }
+
+/* Lavender hero glow — purple radial tint instead of the default lime.
+   Applies in both modes since the hero is dark either way. */
+:root .hero::before,
+[data-scheme="lavender"] .hero::before {
+  background: radial-gradient(circle, rgba(196, 181, 253, 0.10) 0%, transparent 70%);
+}
 
 /* The hero "MOUNTAIN" word — uses --hero-em so it can be lime in
    forest-lime scheme and amber in indigo scheme. */
@@ -871,4 +928,96 @@ footer {
   .stat { padding: 20px; }
   .stat-val { font-size: 40px; }
   .trust-bar-inner { gap: 16px; font-size: 11px; letter-spacing: 1px; }
+}
+
+/* ── Lavender hero stays dark in light mode ──────────────────────
+ * Per the brand spec, the homepage hero keeps a dark canvas even
+ * when OS prefers light. The rest of the page (sections, stats,
+ * footer) follows the light variant defined above. The nav, which
+ * sits visually atop the hero, is also flipped to dark — but only
+ * on pages that have a .hero (i.e., the homepage), so privacy/blog/
+ * contact navs stay lavender-light. body:has() does the page check.
+ *
+ * Applies to lavender (or unset) only — forest-lime and indigo
+ * users keep their existing behavior. */
+@media (prefers-color-scheme: light) {
+  :root .hero,
+  [data-scheme="lavender"] .hero {
+    background: #0F0A1E;
+    color: #F3F0FF;
+  }
+  :root .hero .hero-eyebrow,
+  [data-scheme="lavender"] .hero .hero-eyebrow {
+    color: #9C85C8;
+    background: rgba(196, 181, 253, 0.06);
+    border-color: rgba(196, 181, 253, 0.18);
+  }
+  :root .hero h1,
+  [data-scheme="lavender"] .hero h1 {
+    color: #F3F0FF;
+  }
+  :root .hero h1 em,
+  [data-scheme="lavender"] .hero h1 em {
+    color: #C4B5FD;
+  }
+  :root .hero-sub,
+  [data-scheme="lavender"] .hero-sub {
+    color: #9C85C8;
+  }
+  /* Decorative glow tints purple instead of lime */
+  :root .hero::before,
+  [data-scheme="lavender"] .hero::before {
+    background: radial-gradient(circle, rgba(196, 181, 253, 0.10) 0%, transparent 70%);
+  }
+  /* Ghost CTA on the dark hero needs lighter ink to stay readable */
+  :root .hero .btn-ghost,
+  [data-scheme="lavender"] .hero .btn-ghost {
+    background: rgba(196, 181, 253, 0.08);
+    color: #F3F0FF;
+    border-color: rgba(196, 181, 253, 0.18);
+  }
+  /* Primary CTA on the dark hero — white text on purple reads cleanly */
+  :root .hero .btn-lime,
+  [data-scheme="lavender"] .hero .btn-lime {
+    background: #8B5CF6;
+    color: #FFFFFF;
+  }
+  :root .hero .btn-lime:hover,
+  [data-scheme="lavender"] .hero .btn-lime:hover {
+    background: #7C3AED;
+  }
+
+  /* Nav above the dark hero — only on the homepage */
+  :root body:has(.hero) nav,
+  [data-scheme="lavender"] body:has(.hero) nav {
+    background: rgba(15, 10, 30, 0.85);
+    border-bottom: 1px solid rgba(196, 181, 253, 0.12);
+  }
+  :root body:has(.hero) .wordmark,
+  [data-scheme="lavender"] body:has(.hero) .wordmark {
+    color: #C4B5FD;
+  }
+  :root body:has(.hero) .nav-links a:not(.btn),
+  [data-scheme="lavender"] body:has(.hero) .nav-links a:not(.btn) {
+    color: #9C85C8;
+  }
+  :root body:has(.hero) .nav-links a:not(.btn):hover,
+  [data-scheme="lavender"] body:has(.hero) .nav-links a:not(.btn):hover {
+    color: #C4B5FD;
+  }
+  /* Trust bar sits directly under the dark hero — matching dark surface */
+  :root body:has(.hero) .trust-bar,
+  [data-scheme="lavender"] body:has(.hero) .trust-bar {
+    background: #1A1035;
+    border-top-color: rgba(196, 181, 253, 0.12);
+    border-bottom-color: rgba(196, 181, 253, 0.12);
+  }
+  :root body:has(.hero) .trust-bar-inner,
+  [data-scheme="lavender"] body:has(.hero) .trust-bar-inner {
+    color: #9C85C8;
+  }
+  :root body:has(.hero) .trust-bar-item::before,
+  [data-scheme="lavender"] body:has(.hero) .trust-bar-item::before {
+    color: #C4B5FD;
+  }
 }

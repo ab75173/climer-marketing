@@ -850,22 +850,109 @@ section { padding: 80px 0; position: relative; }
 /* Footer */
 footer {
   border-top: 1px solid var(--border);
-  padding: 48px 0 32px;
-  font-size: 13px;
+  padding: 64px 0 32px;
+  font-size: 14px;
   color: var(--fog);
 }
 .footer-inner {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
+}
+/* Top: brand column + 3 link columns. The brand column is wider so the
+   tagline doesn't wrap awkwardly next to short link columns. */
+.footer-cols {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 280px;
+}
+.footer-wordmark {
+  font-family: 'Fraunces', ui-serif, Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--lime);
+  text-decoration: none;
+  line-height: 1;
+}
+.footer-tagline {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--fog);
+}
+.footer-cta {
+  align-self: flex-start;
+  margin-top: 6px;
+  background: var(--lime);
+  color: var(--on-cta);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: background .15s, transform .15s;
+}
+.footer-cta:hover { background: var(--lime-hover); transform: translateY(-1px); }
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-heading {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--ice);
+  margin-bottom: 2px;
+}
+.footer-col a {
+  color: var(--fog);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color .15s;
+}
+.footer-col a:hover { color: var(--lime); }
+
+/* Bottom: copyright + legal, separated by a thin rule. */
+.footer-base {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
+  font-size: 13px;
 }
-.footer-links { display: flex; gap: 20px; }
-.footer-links a:hover { color: var(--lime); }
+.footer-base-links { display: flex; gap: 20px; }
+.footer-base-links a { color: var(--fog); text-decoration: none; transition: color .15s; }
+.footer-base-links a:hover { color: var(--lime); }
+
+@media (max-width: 768px) {
+  .footer-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+}
+@media (max-width: 480px) {
+  .footer-cols { grid-template-columns: 1fr; gap: 28px; }
+  .footer-base { justify-content: flex-start; }
+}
 
 /* ── Trust ribbon (under hero) ─────────────────────────────────── */
 .trust-bar {
